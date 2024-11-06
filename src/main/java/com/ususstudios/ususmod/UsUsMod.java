@@ -1,5 +1,6 @@
 package com.ususstudios.ususmod;
 
+import com.ususstudios.ususmod.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,7 +39,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(UsUsMod.MOD_ID)
 public class UsUsMod
 {
-    public static final String MOD_ID = "ususminecraftmodattemptone";
+    public static final String MOD_ID = "ususminecraftmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -46,6 +47,8 @@ public class UsUsMod
     public UsUsMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
+        
+        ModItems.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
@@ -65,7 +68,9 @@ public class UsUsMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.BISMUTH);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
