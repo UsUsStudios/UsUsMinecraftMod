@@ -1,3 +1,7 @@
 {
-  "item.ususminecraftmod.bismuth": "Bismuth"
+  "item.ususminecraftmod.bismuth": "Bismuth",
+  "item.ususminecraftmod.raw_bismuth": "Raw Bismuth",
+
+  "block.ususminecraftmod.bismuth_block": "Block of Bismuth",
+  "block.ususminecraftmod.bismuth_ore": "Bismuth Ore"
 }

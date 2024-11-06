@@ -1,5 +1,6 @@
 package com.ususstudios.ususmod;
 
+import com.ususstudios.ususmod.block.ModBlocks;
 import com.ususstudios.ususmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -48,7 +49,9 @@ public class UsUsMod
         // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
         
+        // Register everything
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
@@ -70,6 +73,12 @@ public class UsUsMod
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.RAW_BISMUTH);
+        }
+        
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
         }
     }
 
