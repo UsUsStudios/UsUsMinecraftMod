@@ -1,7 +1,12 @@
 {
   "item.ususminecraftmod.bismuth": "Bismuth",
   "item.ususminecraftmod.raw_bismuth": "Raw Bismuth",
+  "item.ususminecraftmod.bismuth_chisel": "Bismuth Chisel",
 
   "block.ususminecraftmod.bismuth_block": "Block of Bismuth",
-  "block.ususminecraftmod.bismuth_ore": "Bismuth Ore"
+  "block.ususminecraftmod.bismuth_ore": "Bismuth Ore",
+  "block.ususminecraftmod.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
+  "block.ususminecraftmod.magic_block": "Magic Block",
+
+  "creativetab.ususminecraftmod.bismuth_items": "Bismuth Items"
 }
