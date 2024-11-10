@@ -46,7 +46,7 @@ public class ModBlocks {
 	
 	public static final DeferredBlock<Block> HEMATITE_PROCESSOR = registerBlock("hematite_processor",
 			() -> new HematiteProcessor(BlockBehaviour.Properties.of()
-							.strength(4f)
+							.strength(6f)
 							.requiresCorrectToolForDrops()
 							.sound(SoundType.NETHERRACK)
 			) {
