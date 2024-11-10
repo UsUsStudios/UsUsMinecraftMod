@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '1.0.21'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -18,6 +19,7 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    mavenCentral()
 }
 
 base {
@@ -112,6 +114,7 @@ configurations {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -186,4 +189,7 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+}
+kotlin {
+    jvmToolchain(21)
 }

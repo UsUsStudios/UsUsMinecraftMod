@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ususminecraftmod:hematite_block",
+    "ususminecraftmod:hematite_ore",
+    "ususminecraftmod:hematite_deepslate_ore"
+  ]
+}
